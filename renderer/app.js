@@ -1,8 +1,9 @@
-import { createSSRApp, h } from 'vue'
-import PageShell from './PageShell.vue'
-import { setPageContext } from './usePageContext'
+import { createSSRApp, h } from "vue";
+import PageShell from "./PageShell.vue";
+import { setPageContext } from "./usePageContext";
+import vuetify from "../vuetify/vuetify";
 
-export { createApp }
+export { createApp };
 
 function createApp(Page, pageProps, pageContext) {
   const PageWithLayout = {
@@ -12,17 +13,19 @@ function createApp(Page, pageProps, pageContext) {
         {},
         {
           default() {
-            return h(Page, pageProps || {})
-          }
+            return h(Page, pageProps || {});
+          },
         }
-      )
-    }
-  }
+      );
+    },
+  };
 
-  const app = createSSRApp(PageWithLayout)
+  const app = createSSRApp(PageWithLayout);
+
+  app.use(vuetify);
 
   // We make pageContext available from any Vue component
-  setPageContext(app, pageContext)
+  setPageContext(app, pageContext);
 
-  return app
+  return app;
 }

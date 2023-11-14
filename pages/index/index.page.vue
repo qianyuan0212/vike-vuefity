@@ -5,8 +5,11 @@
     <li>Rendered to HTML.</li>
     <li>Interactive. <Counter /></li>
   </ul>
+
+  <CommonComponents />
 </template>
 
 <script setup>
-import Counter from './Counter.vue'
+import Counter from "./Counter.vue";
+import CommonComponents from "./CommonComponents.vue";
 </script>
