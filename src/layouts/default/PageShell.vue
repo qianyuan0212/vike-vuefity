@@ -2,7 +2,7 @@
   <div class="layout">
     <div class="navigation">
       <a href="/" class="logo">
-        <img src="./logo.svg" height="64" width="64" alt="logo" />
+        <img src="@/assets/logo.svg" height="64" width="64" alt="logo" />
       </a>
       <Link href="/">Home</Link>
       <Link href="/about">About</Link>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import Link from './Link.vue'
+import Link from "@/components/Link.vue";
 </script>
 
 <style>

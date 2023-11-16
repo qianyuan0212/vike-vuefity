@@ -5,7 +5,7 @@ export const passToClient = ["pageProps", "urlPathname"];
 import { renderToString as renderToString_ } from "@vue/server-renderer";
 import { escapeInject, dangerouslySkipEscape } from "vike/server";
 import { createApp } from "./app";
-import logoUrl from "./logo.svg";
+import logoUrl from "@/assets/logo.svg";
 
 async function render(pageContext) {
   const { Page, pageProps } = pageContext;

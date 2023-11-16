@@ -12,6 +12,6 @@ a.active {
 }
 </style>
 <script setup>
-import { usePageContext } from './usePageContext'
-const pageContext = usePageContext()
+import { usePageContext } from "/renderer/usePageContext";
+const pageContext = usePageContext();
 </script>
