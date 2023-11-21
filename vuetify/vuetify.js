@@ -53,6 +53,7 @@ export default createVuetify({
       variant: "solo-filled",
       flat: true,
       rounded: true,
+      hideDetails: "auto",
       class: "sologo-text-field",
     },
     SologoAutocomplete: {
@@ -82,17 +83,15 @@ export default createVuetify({
     },
   },
   theme: {
-    // variations: {
-    //   colors: ["primary", "secondary"],
-    //   lighten: 3,
-    //   darken: 2,
-    // },
     themes: {
       light: {
         colors: {
           primary: "#FE6726",
-          "primary-lighten-1": "#FDF6EC",
+          "primary-light": "#FDF6EC",
           secondary: "#38C191",
+          background: "#F8F9FB",
+          surface: "#ffffff",
+
           gray: "6e6e6e",
           "gray-light": "#F3F6FB",
           "gray-dark": "#333333",
@@ -103,6 +102,11 @@ export default createVuetify({
           warning: "#EB8605",
         },
       },
+    },
+    variations: {
+      colors: ["primary"],
+      lighten: 5,
+      // darken: 2,
     },
   },
 });

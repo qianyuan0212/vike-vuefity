@@ -1,64 +1,57 @@
 <template>
-  <v-container fluid class="first-section" :class="'first-section-' + name">
-    <v-row>
-      <v-spacer />
-      <v-col cols="12" md="9" lg="7" xl="6" class="text-center">
-        <h1 class="text-h1">Ai native Logo genaerator</h1>
-        <p class="text-subtitle-1">
-          Get inspired from our thousands of logo design strategic model and get
-          high quolity logos in minutes
-        </p>
-        <p class="search-area">
-          <sologo-text-field
-            :model-value="brandname"
-            placeholder="Enter your brand name"
-            variant="solo"
-            class="floated"
-            autocomplete="new-password"
-            @click:append-inner="toggleMarker"
-          >
-            <template v-slot:append-inner>
-              <sologo-btn color="primary" append-icon="$generate"
-                >Get Started</sologo-btn
-              >
-            </template>
-          </sologo-text-field>
-        </p>
-      </v-col>
-      <v-spacer />
-    </v-row>
-  </v-container>
+  <div class="first-section" :class="'first-section-' + name">
+    <v-container fluid>
+      <v-row>
+        <v-spacer />
+        <v-col cols="12" md="9" lg="7" xl="6" class="text-center">
+          <h1 class="text-h1">Ai native Logo genaerator</h1>
+          <p class="text-subtitle-1">
+            Get inspired from our thousands of logo design strategic model and
+            get high quolity logos in minutes
+          </p>
+          <p class="search-area">
+            <sologo-text-field
+              :model-value="brandname"
+              placeholder="Enter your brand name"
+              variant="solo"
+              class="floated"
+              autocomplete="new-password"
+              @click:append-inner="toggleMarker"
+            >
+              <template v-slot:append-inner>
+                <sologo-btn color="primary" append-icon="$generate"
+                  >Get Started</sologo-btn
+                >
+              </template>
+            </sologo-text-field>
+          </p>
+        </v-col>
+        <v-spacer />
+      </v-row>
+    </v-container>
+  </div>
 
-  <v-divider
-    :thickness="20"
-    color="gray-light"
-    class="border-opacity-100"
-  ></v-divider>
-
-  <v-container class="second-section" :class="'second-section-' + name">
-    <v-row>
-      <v-col cols="12" md="5">
-        <div class="info">
-          <h2 class="text-h2">the most easy and powerful logo maker</h2>
-          <ul class="key-list">
-            <li>Ai copilot design assistant</li>
-            <li>Thousands of logo design strategic model</li>
-            <li>Commercial permmit</li>
-          </ul>
-        </div>
-      </v-col>
-      <v-col cols="12" md="7">
-        <div class="banner">
-          <v-img src="@/assets/images/index-banner.webp" width="88%" />
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
-  <v-divider
-    :thickness="20"
-    color="gray-light"
-    class="border-opacity-100"
-  ></v-divider>
+  <div class="second-section" :class="'second-section-' + name">
+    <v-container>
+      <v-row>
+        <v-col cols="12" md="5">
+          <div class="info">
+            <h2 class="text-h2">the most easy and powerful logo maker</h2>
+            <ul class="key-list">
+              <li>Ai copilot design assistant</li>
+              <li>Thousands of logo design strategic model</li>
+              <li>Commercial permmit</li>
+            </ul>
+          </div>
+        </v-col>
+        <v-col cols="12" md="7">
+          <div class="banner">
+            <v-img src="@/assets/images/index-banner.webp" width="88%" />
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script setup>
@@ -85,8 +78,11 @@ export const documentProps = {
 }
 
 .first-section {
-  padding-top: 84px;
+  padding-top: 284px;
   padding-bottom: 118px;
+  margin-bottom: 20px;
+  margin-top: -200px;
+  background: rgb(var(--v-theme-surface));
   .text-h1 {
     text-transform: capitalize !important;
   }
@@ -107,6 +103,8 @@ export const documentProps = {
 }
 
 .second-section {
+  // margin-bottom: 20px;
+  background: rgb(var(--v-theme-surface));
   .info {
     padding-top: 20px;
 

@@ -1,8 +1,4 @@
-@use "./settings";
-
-body {
-  font-family: settings.$body-font-family;
-}
+@use "./settings" as *;
 
 // 覆盖vueitfy的默认样式
 .sologo-btn {
@@ -31,8 +27,8 @@ body {
   }
 
   &[floated] {
-    border: settings.$floated-border !important;
-    box-shadow: settings.$floated-shadow !important;
+    border: $floated-border !important;
+    box-shadow: $floated-shadow !important;
   }
 }
 
@@ -102,9 +98,9 @@ body {
 
   &.floated {
     .v-input__control {
-      border: settings.$floated-border;
+      border: $floated-border;
       border-radius: 9999px;
-      box-shadow: settings.$floated-shadow;
+      box-shadow: $floated-shadow;
     }
   }
 }
@@ -124,5 +120,20 @@ body {
 
   &.v-autocomplete .v-field .v-field__input > input {
     align-self: center;
+  }
+}
+
+// chip
+.v-chip.sologo {
+  // color: rgb(var(--v-theme-gray));
+  .v-chip__underlay {
+    background: rgb(var(--v-theme-primary));
+    opacity: 0.08;
+  }
+  .v-chip__overlay {
+    background: rgb(var(--v-theme-primary));
+  }
+  .v-ripple__animation {
+    background: rgb(var(--v-theme-primary));
   }
 }

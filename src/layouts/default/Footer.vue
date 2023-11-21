@@ -21,11 +21,13 @@
 
 <style lang="scss" scoped>
 .sologo-footer {
+  flex: 0 0 auto;
   display: block;
   padding-left: 36px;
   padding-right: 36px;
   padding-top: 28px;
   padding-bottom: 18px;
+  margin-top: 20px;
 }
 .contact {
   font-size: calc(18 / 16) * 1rem;
@@ -49,6 +51,7 @@
   a {
     color: rgb(var(--v-theme-gray-dark));
     margin-right: 1.5em;
+    text-decoration: none;
   }
 }
 </style>

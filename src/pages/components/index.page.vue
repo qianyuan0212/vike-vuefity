@@ -10,7 +10,7 @@ import Components from "./Components.vue";
 // Custom Export
 export const documentProps = {
   // This title and description will override the defaults
-  title: "About SpaceX",
+  title: "Components",
   description: "Our mission is to explore the galaxy.",
   // layout: "other",
 };

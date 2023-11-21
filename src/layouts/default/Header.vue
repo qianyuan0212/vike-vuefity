@@ -30,10 +30,10 @@
 .sologo-header {
   box-shadow: settings.$floated-shadow !important;
 
-  .nav {
-    .sologo-btn {
-      font-size: 18px;
-    }
-  }
+  // .nav {
+  //   .sologo-btn {
+  //     font-size: 18px;
+  //   }
+  // }
 }
 </style>

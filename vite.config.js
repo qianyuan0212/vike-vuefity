@@ -32,6 +32,10 @@ export default defineConfig({
             name: "Paytone One",
             styles: "wght@400",
           },
+          {
+            name: "Oswald",
+            styles: "wght@400",
+          },
         ],
       },
     }),
