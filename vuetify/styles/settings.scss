@@ -6,5 +6,45 @@
 
 // https://vuetifyjs.com/features/sass-variables/`
 @forward "vuetify/settings" with (
-  $color-pack: false
+  $color-pack: false,
+
+  $heading-font-family: "Paytone One",
+  // $line-height-root: 1.3125,
+  $typography:
+    (
+      "h1": (
+        "size": 3.125rem,
+        "weight": 400,
+        "line-height": 4.375rem,
+        "letter-spacing": 0,
+      ),
+      "h2": (
+        "size": 2rem,
+        "weight": 400,
+        "line-height": 3rem,
+        "letter-spacing": 0,
+      ),
+      "h3": (
+        "size": 1.5rem,
+        "weight": 400,
+        "line-height": 2.25rem,
+        "letter-spacing": 0,
+      ),
+      "subtitle-1": (
+        "size": 1.5rem,
+        "weight": 400,
+        "line-height": 2.25rem,
+        "letter-spacing": 0,
+      ),
+      "subtitle-2": (
+        "size": 1.25rem,
+        "weight": 400,
+        "line-height": 1.875rem,
+        "letter-spacing": 0,
+      ),
+    )
 );
+
+// 自定义变量
+$floated-border: 1px solid #e3e3e3 !default;
+$floated-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 0 !default;

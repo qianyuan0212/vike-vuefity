@@ -5,7 +5,7 @@
  */
 
 // Styles
-// import "vuetify/styles";
+import "vuetify/styles";
 import "./styles/main.scss";
 
 import "@mdi/font/css/materialdesignicons.css";
@@ -93,6 +93,7 @@ export default createVuetify({
           primary: "#FE6726",
           "primary-lighten-1": "#FDF6EC",
           secondary: "#38C191",
+          gray: "6e6e6e",
           "gray-light": "#F3F6FB",
           "gray-dark": "#333333",
 

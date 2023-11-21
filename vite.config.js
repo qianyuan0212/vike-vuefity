@@ -28,6 +28,10 @@ export default defineConfig({
             name: "Roboto",
             styles: "wght@100;300;400;500;700;900",
           },
+          {
+            name: "Paytone One",
+            styles: "wght@400",
+          },
         ],
       },
     }),
@@ -41,7 +45,7 @@ export default defineConfig({
     extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
   },
   server: {
-    port: 3000,
+    port: 3001,
   },
   ssr: { noExternal: ["vuetify"] },
 });

@@ -1,8 +1,8 @@
-@use "vuetify";
+@use "./settings";
 
-// 定义变量
-$floated-border: 1px solid #e3e3e3;
-$floated-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 0;
+body {
+  font-family: settings.$body-font-family;
+}
 
 // 覆盖vueitfy的默认样式
 .sologo-btn {
@@ -31,8 +31,8 @@ $floated-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 0;
   }
 
   &[floated] {
-    border: $floated-border !important;
-    box-shadow: $floated-shadow !important;
+    border: settings.$floated-border !important;
+    box-shadow: settings.$floated-shadow !important;
   }
 }
 
@@ -102,9 +102,9 @@ $floated-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 0;
 
   &.floated {
     .v-input__control {
-      border: $floated-border;
+      border: settings.$floated-border;
       border-radius: 9999px;
-      box-shadow: $floated-shadow;
+      box-shadow: settings.$floated-shadow;
     }
   }
 }

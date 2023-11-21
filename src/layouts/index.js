@@ -1,4 +1,4 @@
-import DefaultLayout from "./default/PageShell.vue";
+import DefaultLayout from "./default/Default.vue";
 import OtherLayout from "./other/PageShell.vue";
 
 export default {
