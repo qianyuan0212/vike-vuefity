@@ -61,6 +61,7 @@ export default createVuetify({
       flat: true,
       rounded: true,
       hideNoData: true,
+      hideDetails: "auto",
       menuIcon: "",
       menuProps: {
         class: "sologo-autocomplete-menu",
