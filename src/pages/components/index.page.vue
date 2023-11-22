@@ -1,9 +1,9 @@
 <template>
-  <Components />
+  <Basic />
 </template>
 
 <script setup>
-import Components from "./Components.vue";
+import Basic from "./Basic.vue";
 </script>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="first-section" :class="'first-section-' + name">
+  <div class="first-section">
     <v-container fluid>
       <v-row>
         <v-spacer />
@@ -11,15 +11,17 @@
           </p>
           <p class="search-area">
             <sologo-text-field
-              :model-value="brandname"
+              v-model="brandname"
               placeholder="Enter your brand name"
               variant="solo"
               class="floated"
               autocomplete="new-password"
-              @click:append-inner="toggleMarker"
             >
               <template v-slot:append-inner>
-                <sologo-btn color="primary" append-icon="$generate"
+                <sologo-btn
+                  color="primary"
+                  append-icon="$generate"
+                  @click="getStarted"
                   >Get Started</sologo-btn
                 >
               </template>
@@ -31,7 +33,7 @@
     </v-container>
   </div>
 
-  <div class="second-section" :class="'second-section-' + name">
+  <div class="second-section">
     <v-container>
       <v-row>
         <v-col cols="12" md="5">
@@ -55,10 +57,10 @@
 </template>
 
 <script setup>
-import { useDisplay } from "vuetify";
-
-// Destructure only the keys you want to use
-const { name } = useDisplay();
+// import { useDisplay } from "vuetify";
+// const { name } = useDisplay();
+// ！！！ 因为是服务器端渲染，所以不能使用display.name，只能用css的meida query
+// 如果修改了vuetify的media query断点，那么这里也要修改
 </script>
 
 <script>
@@ -67,6 +69,21 @@ export const documentProps = {
   // This title and description will override the defaults
   title: "About SpaceX",
   description: "Our mission is to explore the galaxy.",
+};
+
+export default {
+  name: "IndexPage",
+  data() {
+    return {
+      brandname: "",
+    };
+  },
+  methods: {
+    getStarted() {
+      console.log("getStarted", this.brandname);
+      // this.$router.push({ name: "LogoIdeas", query: { brandname: this.brandname } });
+    },
+  },
 };
 </script>
 
@@ -81,7 +98,7 @@ export const documentProps = {
   padding-top: 284px;
   padding-bottom: 118px;
   margin-bottom: 20px;
-  margin-top: -200px;
+  margin-top: -200px; // 防止下拉漏出灰色背景
   background: rgb(var(--v-theme-surface));
   .text-h1 {
     text-transform: capitalize !important;
@@ -94,12 +111,34 @@ export const documentProps = {
     width: 60%;
     margin: 0 auto;
   }
-  &-sm .search-area {
-    width: 75%;
-  }
-  &-xs .search-area {
+}
+
+@media only screen {
+  // all screen
+}
+@media (max-width: 599.98px) {
+  // xs
+  .first-section .search-area {
     width: 90%;
   }
+}
+@media (min-width: 600px) and (max-width: 959.98px) {
+  // sm
+  .first-section .search-area {
+    width: 75%;
+  }
+}
+@media (min-width: 960px) and (max-width: 1279.98px) {
+  // md
+}
+@media (min-width: 1280px) and (max-width: 1919.98px) {
+  // lg
+}
+@media (min-width: 1920px) and (max-width: 2559.98px) {
+  // xl
+}
+@media (min-width: 2560px) {
+  // xxl
 }
 
 .second-section {
@@ -147,6 +186,13 @@ export const documentProps = {
     .info {
       padding-bottom: 0px;
     }
+  }
+}
+
+@media (max-width: 959.98px) {
+  // sm
+  .second-section .info {
+    padding-bottom: 0px;
   }
 }
 </style>

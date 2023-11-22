@@ -129,41 +129,61 @@
       <v-card-text>
         <div style="max-width: 500px">
           <sologo-text-field
-            model-value="SologoAi"
+            v-model="brandname"
             label="Name"
-            class="my-4"
+            class="my-4 append-inside"
             autocomplete="new-password"
-            append-inner-icon="mdi-arrow-right"
-            @click:append-inner="toggleMarker"
-          ></sologo-text-field>
+          >
+            <template v-slot:append>
+              <v-btn
+                variant="text"
+                icon="mdi-arrow-right"
+                @click="appendClickHandler(brandname)"
+              ></v-btn>
+            </template>
+          </sologo-text-field>
           <sologo-text-field
-            model-value="SologoAi"
+            v-model="brandname2"
             label="Name"
             variant="solo"
             class="my-4"
             autocomplete="new-password"
-            append-inner-icon="mdi-arrow-right"
-            @click:append-inner="toggleMarker"
-          ></sologo-text-field>
+          >
+            <template v-slot:append-inner>
+              <v-btn
+                variant="text"
+                icon="mdi-arrow-right"
+                @click="appendClickHandler(brandname2)"
+              ></v-btn>
+            </template>
+          </sologo-text-field>
           <sologo-text-field
-            model-value="SologoAi"
+            v-model="brandname3"
             label="Name"
             variant="solo"
             class="outlined my-4"
             autocomplete="new-password"
-            append-inner-icon="mdi-arrow-right"
-            @click:append-inner="toggleMarker"
-          ></sologo-text-field>
+          >
+            <template v-slot:append-inner>
+              <v-btn
+                variant="text"
+                icon="mdi-arrow-right"
+                @click="appendClickHandler(brandname3)"
+              ></v-btn>
+            </template>
+          </sologo-text-field>
           <sologo-text-field
-            :model-value="brandname"
+            v-model="brandname4"
             placeholder="Enter your brand name"
             variant="solo"
             class="floated my-4"
             autocomplete="new-password"
-            @click:append-inner="toggleMarker"
           >
             <template v-slot:append-inner>
-              <sologo-btn color="primary" append-icon="$generate"
+              <sologo-btn
+                color="primary"
+                append-icon="$generate"
+                @click="appendClickHandler(brandname4)"
                 >Get Started</sologo-btn
               >
             </template>
@@ -174,13 +194,19 @@
       <v-card-text>
         <div style="max-width: 500px">
           <sologo-autocomplete
-            v-model="designFor"
-            :items="designForItems"
+            v-model="business"
+            :items="businessItems"
             label="Design for"
             autocomplete="new-password"
+            class="append-inside"
+            @input="inputHandler"
           >
-            <template v-slot:append-inner>
-              <v-icon icon="mdi-arrow-right" @click="toggleMarker"></v-icon>
+            <template v-slot:append>
+              <v-btn
+                variant="text"
+                icon="mdi-arrow-right"
+                @click="appendClickHandler2"
+              ></v-btn>
             </template>
           </sologo-autocomplete>
         </div>
@@ -193,7 +219,10 @@
 export default {
   data() {
     return {
-      brandname: "",
+      brandname: "SologoAi",
+      brandname2: "SologoAi",
+      brandname3: "SologoAi",
+      brandname4: "",
 
       menuItems: [
         { title: "JPG", handler: () => console.log("JPG") },
@@ -203,8 +232,8 @@ export default {
         { title: "Zip All", handler: () => console.log("Zip All") },
       ],
 
-      designFor: undefined,
-      designForItems: [
+      business: undefined,
+      businessItems: [
         "California",
         "Colorado",
         "Florida",
@@ -215,9 +244,14 @@ export default {
     };
   },
   methods: {
-    toggleMarker(e) {
-      console.log(e);
-      console.log("toggleMarker");
+    appendClickHandler(val) {
+      console.log("appendClickHandler", val);
+    },
+    appendClickHandler2() {
+      console.log("appendClickHandler2", this.business);
+    },
+    inputHandler(e) {
+      this.business = e.target.value;
     },
   },
 };

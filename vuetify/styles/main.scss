@@ -1,5 +1,31 @@
 @use "./settings" as *;
 
+body {
+  background: rgb(var(--v-theme-background));
+}
+
+@media only screen {
+  // all screen
+}
+@media (max-width: 599.98px) {
+  // xs
+}
+@media (min-width: 600px) and (max-width: 959.98px) {
+  // sm
+}
+@media (min-width: 960px) and (max-width: 1279.98px) {
+  // md
+}
+@media (min-width: 1280px) and (max-width: 1919.98px) {
+  // lg
+}
+@media (min-width: 1920px) and (max-width: 2559.98px) {
+  // xl
+}
+@media (min-width: 2560px) {
+  // xxl
+}
+
 // 覆盖vueitfy的默认样式
 .sologo-btn {
   &.v-btn--size-default {
@@ -76,6 +102,12 @@
     }
 
     &:has(.v-field__append-inner .v-btn) {
+      .v-field--appended {
+        padding-inline-end: 6px;
+      }
+    }
+
+    &:has(.v-field__append-inner .sologo-btn) {
       .v-field {
         --v-input-control-height: 66px;
       }
@@ -101,6 +133,17 @@
       border: $floated-border;
       border-radius: 9999px;
       box-shadow: $floated-shadow;
+    }
+  }
+
+  &.append-inside {
+    position: relative;
+
+    .v-input__append {
+      position: absolute;
+      top: 0;
+      right: 6px;
+      bottom: 0;
     }
   }
 }
