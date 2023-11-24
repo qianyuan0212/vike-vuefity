@@ -25,7 +25,7 @@
   display: block;
   padding-left: 36px;
   padding-right: 36px;
-  padding-top: 28px;
+  padding-top: 18px;
   padding-bottom: 18px;
   margin-top: 20px;
 }

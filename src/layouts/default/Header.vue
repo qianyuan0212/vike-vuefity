@@ -5,11 +5,11 @@
         <v-img src="@/assets/logo.svg" width="160" height="40" />
       </a>
       <v-spacer />
-      <div class="nav">
-        <sologo-btn>AI LogoMaker</sologo-btn>
-        <sologo-btn>Logo Ideas</sologo-btn>
-        <sologo-btn>FAQs</sologo-btn>
-      </div>
+      <v-tabs :model-value="tabValue" color="primary" align-tabs="center">
+        <v-tab :value="1" to="/logomaker">AI LogoMaker</v-tab>
+        <v-tab :value="2" to="/logoideas">Logo Ideas</v-tab>
+        <v-tab :value="3" to="/faqs">FAQs</v-tab>
+      </v-tabs>
       <v-spacer />
       <div>
         <sologo-btn size="small">Sign in</sologo-btn>
@@ -21,19 +21,22 @@
   </v-app-bar>
 </template>
 
-<script setup>
-//
+<script>
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "DefaultHeader",
+  data() {
+    return {
+      tabValue: 1,
+    };
+  },
+});
 </script>
 
 <style lang="scss" scoped>
 @use "/vuetify/styles/settings";
 .sologo-header {
   box-shadow: settings.$floated-shadow !important;
-
-  // .nav {
-  //   .sologo-btn {
-  //     font-size: 18px;
-  //   }
-  // }
 }
 </style>

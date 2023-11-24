@@ -17,7 +17,10 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "Typography",
   data: () => ({
     classes: [
       ["Heading 1", "text-h1", "50/70, Paytone One"],
@@ -37,7 +40,7 @@ export default {
       ["default", "-", "16/24, Roboto"],
     ],
   }),
-};
+});
 </script>
 
 <style></style>

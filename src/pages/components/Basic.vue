@@ -199,7 +199,7 @@
             label="Design for"
             autocomplete="new-password"
             class="append-inside"
-            @input="inputHandler"
+            @blur="blurHandler"
           >
             <template v-slot:append>
               <v-btn
@@ -216,7 +216,10 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "Basic",
   data() {
     return {
       brandname: "SologoAi",
@@ -250,11 +253,11 @@ export default {
     appendClickHandler2() {
       console.log("appendClickHandler2", this.business);
     },
-    inputHandler(e) {
+    blurHandler(e) {
       this.business = e.target.value;
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped></style>
