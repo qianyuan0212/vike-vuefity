@@ -5,11 +5,11 @@
         <v-spacer />
         <v-col cols="12" md="9" lg="7" xl="6" class="text-center">
           <h1 class="text-h1">Ai native Logo genaerator</h1>
-          <p class="text-subtitle-1">
+          <div class="text-subtitle-1">
             Get inspired from our thousands of logo design strategic model and
             get high quolity logos in minutes
-          </p>
-          <p class="search-area">
+          </div>
+          <div class="search-area">
             <sologo-text-field
               v-model="brandname"
               placeholder="Enter your brand name"
@@ -26,7 +26,7 @@
                 >
               </template>
             </sologo-text-field>
-          </p>
+          </div>
         </v-col>
         <v-spacer />
       </v-row>
